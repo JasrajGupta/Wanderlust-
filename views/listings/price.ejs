@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplate") %>
+
+<h2>Filter Listings by Price</h2>
+<div class="row" >
+    <div class="mb-3 col-md-4">
+<form action="/listings/pricefilter/results" method="GET">
+  <label for="min" class="form-label">Min Price (₹):</label>
+  <input  class="form-control"  type="number" name="min" required>
+</div>
+<div class="mb-3 col-md-8">
+  <label for="max" class="form-label">Max Price (₹):</label>
+  <input class="form-control" type="number" name="max" required>
+  </div>
+<br>
+</div>
+  <button type="submit" class=" btn add-btn">Apply Filter</button>
+</form>
+
+ 

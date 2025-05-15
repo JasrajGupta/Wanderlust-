@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/listings">Explore</a>
+        </div>
+         <div class="navbar-nav ms-auto search-container" id="alphabet-filter">
+         <form class="d-flex align-items-center w-100" role="search">
+            <div class="position-relative flex-grow-1 me-2">
+               <input class="form-control search-input" list="suggestion" type="text" id="searchInput" placeholder="Search...">
+             <ul id="searchResults"  class="search-results-list">
+             </ul>
+             </div>
+             <button class="btn add-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          </form>
+         
+          </div>
+          <script src="/js/search.js"></script>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="/listings/new">Add New Listing</a>
+          <% if(!currentUser) { %>
+            <a class="nav-link"  href="/signup"><B>Signup</B></a>
+            <a class="nav-link"  href="/login"><B>Login</B></a>
+            <%}%>
+              <% if (currentUser) { %>
+            <a href="/wishlist" class="nav-link">My Wishlist</a>
+                <% } %>
+            <%if(currentUser) {%>
+              <a class="nav-link" href="/logout"><B>logout</B></a>
+              <%}%>
+        </div>
+      </div>
+    </div>
+  </nav>

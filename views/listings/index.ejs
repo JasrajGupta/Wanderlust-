@@ -1,0 +1,296 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+
+ <!-- <div id="filters" class="border-bottom bg-light p-2">
+  <div class="category-scroll d-flex gap-3 flex-nowrap overflow-auto mb-2"> -->
+    <!-- Slidable category buttons -->
+    <!-- <div class="filter">
+      <button onclick="loadCategory('trending')" class="filter-btn"><i class="fa-solid fa-fire-flame-curved"></i></button>
+      <p>Trending</p>
+    </div>
+    <div class="filter">
+      <button onclick="loadCategory('rooms')" class="filter-btn"><i class="fa-solid fa-bed"></i></button>
+      <p>Rooms</p>
+    </div>
+    <div class="filter">
+      <button onclick="loadCategory('iconic cities')" class="filter-btn"><i class="fa-solid fa-mountain-city"></i></button>
+      <p>Iconic Cities</p>
+    </div>
+    <div class="filter">
+      <button onclick="loadCategory('mountains')" class="filter-btn"><i class="fa-solid fa-mountain-sun"></i></button>
+      <p>Mountains</p>
+    </div>
+    <div class="filter">
+      <button onclick="loadCategory('castles')" class="filter-btn"><i class="fa-solid fa-chess-rook"></i></button>
+      <p>Castles</p>
+    </div>
+    <div class="filter">
+      <button onclick="loadCategory('amazing pools')" class="filter-btn"><i class="fa-solid fa-person-swimming"></i></button>
+      <p>Amazing Pools</p>
+    </div>
+    <div class="filter">
+      <button onclick="loadCategory('tents')" class="filter-btn"><i class="fa-solid fa-tents"></i></button>
+      <p>Tents</p>
+    </div>
+    <div class="filter">
+      <button onclick="loadCategory('farms')" class="filter-btn"><i class="fa-solid fa-tractor"></i></button>
+      <p>Farms</p>
+    </div>
+    <div class="filter">
+      <button onclick="loadCategory('arctic')" class="filter-btn"><i class="fa-solid fa-igloo"></i></button>
+      <p>Arctic</p>
+    </div>
+  </div>
+  <!-- More Options toggle (mobile only) -->
+  <!-- <div class="d-block d-md-none">
+   <button class="btn btn-sm btn-more-options w-100 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#mobileExtras">
+  More Options
+</button>
+    <div class="collapse" id="mobileExtras"> -->
+      <!-- Inside #mobileExtras -->
+<!-- <ul class="list-group">
+  <li class="list-group-item text-center">
+    <button onclick="sortByPrice()" class="dropdown-action">Sort by Price</button>
+  </li>
+  <li class="list-group-item text-center">
+    <form action="/listings/pricefilter" method="GET" class="m-0">
+      <button type="submit" class="dropdown-action">Filter</button>
+    </form>
+  </li>
+  <li class="list-group-item ">
+   <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" id="switchCheckDefault">
+        <label class="form-check-label" for="switchCheckDefault">After Taxes</label>
+      </div>
+    </div>
+  </li>
+</ul>
+    </div>
+  </div> -->
+
+  <!-- Desktop-only more options -->
+  <!-- <div class="d-none d-md-flex gap-3 align-items-center">
+    <div class="filter">
+      <button onclick="sortByPrice()" class="filter-btn"><i class="fa-solid fa-sort"></i></button>
+      <p>Sort</p>
+    </div>
+    <form action="/listings/pricefilter" method="GET">
+      <div class="filter">
+        <button class="filter-btn" type="submit"><i class="fa-solid fa-filter"></i></button>
+        <p>Filter</p>
+      </div>
+    </form>
+    <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" id="switchCheckDefault">
+        <label class="form-check-label" for="switchCheckDefault">After Taxes</label>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div id="filters" class="border-bottom bg-light p-2">
+
+  <!-- Wrapper for desktop layout -->
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
+
+    <!-- CATEGORY SCROLL: Horizontally scrollable ONLY for category buttons -->
+    <div class="w-100">
+      <div class="category-scroll d-flex gap-3 flex-nowrap overflow-auto" style="white-space: nowrap;">
+        <div class="filter">
+          <button onclick="loadCategory('trending')" class="filter-btn"><i class="fa-solid fa-fire-flame-curved"></i></button>
+          <p>Trending</p>
+        </div>
+        <div class="filter">
+          <button onclick="loadCategory('rooms')" class="filter-btn"><i class="fa-solid fa-bed"></i></button>
+          <p>Rooms</p>
+        </div>
+        <div class="filter">
+          <button onclick="loadCategory('iconic cities')" class="filter-btn"><i class="fa-solid fa-mountain-city"></i></button>
+          <p>Iconic Cities</p>
+        </div>
+        <div class="filter">
+          <button onclick="loadCategory('mountains')" class="filter-btn"><i class="fa-solid fa-mountain-sun"></i></button>
+          <p>Mountains</p>
+        </div>
+        <div class="filter">
+          <button onclick="loadCategory('castles')" class="filter-btn"><i class="fa-solid fa-chess-rook"></i></button>
+          <p>Castles</p>
+        </div>
+        <div class="filter">
+          <button onclick="loadCategory('amazing pools')" class="filter-btn"><i class="fa-solid fa-person-swimming"></i></button>
+          <p>Amazing Pools</p>
+        </div>
+        <div class="filter">
+          <button onclick="loadCategory('tents')" class="filter-btn"><i class="fa-solid fa-tents"></i></button>
+          <p>Tents</p>
+        </div>
+        <div class="filter">
+          <button onclick="loadCategory('farms')" class="filter-btn"><i class="fa-solid fa-tractor"></i></button>
+          <p>Farms</p>
+        </div>
+        <div class="filter">
+          <button onclick="loadCategory('arctic')" class="filter-btn"><i class="fa-solid fa-igloo"></i></button>
+          <p>Arctic</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESKTOP BUTTONS: Sort, Filter, Tax Toggle -->
+    <div class="d-none d-md-flex gap-3 align-items-center flex-shrink-0 ms-md-3">
+      <div class="filter d-flex flex-column align-items-center">
+        <button onclick="sortByPrice()" class="filter-btn"><i class="fa-solid fa-sort"></i></button>
+        <p class="m-0">Sort</p>
+      </div>
+
+      <form action="/listings/pricefilter" method="GET" class="d-flex flex-column align-items-center m-0">
+        <div class="filter">
+          <button class="filter-btn" type="submit"><i class="fa-solid fa-filter"></i></button>
+          <p class="m-0">Filter</p>
+        </div>
+      </form>
+
+      <div class="tax-toggle d-flex flex-column align-items-center">
+        <div class="form-check-reverse form-switch">
+          <input class="form-check-input" type="checkbox" id="switchCheckDefault">
+          <label class="form-check-label" for="switchCheckDefault">After Taxes</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE COLLAPSE: Unchanged -->
+  <div class="d-block d-md-none mt-2">
+    <button class="btn btn-sm btn-more-options w-100 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#mobileExtras">
+      More Options
+    </button>
+    <div class="collapse" id="mobileExtras">
+      <ul class="list-group">
+        <li class="list-group-item text-center">
+          <button onclick="sortByPrice()" class="dropdown-action">Sort by Price</button>
+        </li>
+        <li class="list-group-item text-center">
+          <form action="/listings/pricefilter" method="GET" class="m-0">
+            <button type="submit" class="dropdown-action">Filter</button>
+          </form>
+        </li>
+        <li class="list-group-item">
+           <div class="tax-toggle">
+      <div class="form-check-reverse form-switch ">
+        <label class="form-check-label" for="switchCheckDefault"> click to See After Taxes</label>
+       
+      </div>
+    </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+  <script>
+  function loadCategory(category) {
+    window.location.href = `/listings/category/${encodeURIComponent(category)}`;
+  }
+</script>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <% for(let listing of allListings) { %>
+      <a href="/listings/<%=listing._id %>" class="listing-link">
+    <div class="card">
+        <img src="<%= listing.image.url%>" class="card-img-top" alt="listing_image" style="height:20rem;">
+        <div class="card-img-overlay"></div>
+        <div>
+           <!-- Wishlist button -->
+       
+<%
+        // Check if currentUser exists and if wishlist contains the listing id
+        let isWishlisted = false;
+        if (currentUser && currentUser.wishlist) {
+          isWishlisted = currentUser.wishlist.some(function(item) {
+            return item.toString() === listing._id.toString();
+          });
+        }
+      %>
+          <!-- Wishlist button -->
+        <button 
+         class="wishlist-btn" 
+         data-id="<%= listing._id %>" 
+         style="background: none; border: none; position: absolute; top: 1rem; right: 1rem;">
+          <i class="fa-<%= isWishlisted ? 'solid' : 'regular' %> fa-heart"></i>
+         </button>
+
+        </div>
+        <div class="card-body">
+        
+          <p class="card-text"
+          ><b><%=listing.title %></b> <br>
+          &#x20B9;<%=listing.price.toLocaleString("en-IN") %> / Night 
+          <i class="tax-info">+ 18%GST</i>
+          </p>
+        </div>
+      </div>
+    </a>
+
+      <% } %>
+  </div>
+  <script>
+    let taxSwitch = document.getElementById("switchCheckDefault");
+    taxSwitch.addEventListener("click", () => {
+   let taxInfo = document.getElementsByClassName("tax-info")
+   for(info of taxInfo) {
+    if(info.style.display != "inline") {
+      info.style.display = "inline";
+    }else{
+    info.style.display = "none";
+    }
+
+   }
+    })
+  </script>
+
+<script>
+  document.querySelectorAll('.wishlist-btn').forEach(button => {
+    button.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const listingId = button.getAttribute('data-id');
+      const icon = button.querySelector('i');
+
+      try {
+        const res = await fetch(`/wishlist/${listingId}`, {
+          method: 'POST',
+        });
+
+        const data = await res.json();
+
+        if (data.status === "success") {
+          if (data.action === "added") {
+            icon.classList.remove("fa-regular");
+            icon.classList.add("fa-solid");
+          } else if (data.action === "removed") {
+            icon.classList.remove("fa-solid");
+            icon.classList.add("fa-regular");
+          }
+        } else {
+          alert("Failed to toggle wishlist.");
+        }
+      } catch (err) {
+        alert("You must be logged in to use wishlist.");
+        console.error("Wishlist toggle failed:", err);
+      }
+    });
+  });
+</script>
+
+<script>
+  function sortByPrice() {
+    // Redirect to a sorted listing page
+    window.location.href = "/listings/sort";
+  }
+</script>
+
+
+</body>
