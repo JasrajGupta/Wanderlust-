@@ -44,6 +44,37 @@
         <div class="valid-feedback">please enter valid location</div>
     </div>
     
+<div class="mb-3">
+  <label for="category" class="form-label">Category</label>
+  <select name="listing[category]" class="form-control" required>
+    <% const categories = [
+    "adventure",
+    "beaches",
+    "cultural",
+    "ecotourism",
+    "hill stations",
+    "historical",
+    "luxury",
+    "natural wonders",
+    "spiritual",
+    "wildlife",
+    ]; %>
+    <% categories.forEach(cat => { %>
+      <option value="<%= cat %>" <%= listing.category === cat ? "selected" : "" %>>
+        <%= cat.charAt(0).toUpperCase() + cat.slice(1) %>
+      </option>
+    <% }); %>
+  </select>
+  <div class="valid-feedback">Please choose a category</div>
+</div>
+
+
+     <script>
+  function loadCategory(category) {
+    window.location.href = `/listings/category/${encodeURIComponent(category)}`;
+  }
+</script>
+    
         <br><br>
         <button class="btn btn-dark add-btn">Save Edit</button>
         <br><br>

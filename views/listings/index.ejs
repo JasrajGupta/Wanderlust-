@@ -100,40 +100,44 @@
     <div class="w-100">
       <div class="category-scroll d-flex gap-3 flex-nowrap overflow-auto" style="white-space: nowrap;">
         <div class="filter">
-          <button onclick="loadCategory('trending')" class="filter-btn"><i class="fa-solid fa-fire-flame-curved"></i></button>
-          <p>Trending</p>
+          <button onclick="loadCategory('adventure')" class="filter-btn"><i class="fa-solid fa-fire-flame-curved"></i></button>
+          <p>Adventure</p>
         </div>
         <div class="filter">
-          <button onclick="loadCategory('rooms')" class="filter-btn"><i class="fa-solid fa-bed"></i></button>
-          <p>Rooms</p>
+          <button onclick="loadCategory('beaches')" class="filter-btn"><i class="fa-solid fa-umbrella-beach"></i></button>
+          <p>Beaches</p>
         </div>
         <div class="filter">
-          <button onclick="loadCategory('iconic cities')" class="filter-btn"><i class="fa-solid fa-mountain-city"></i></button>
-          <p>Iconic Cities</p>
+          <button onclick="loadCategory('cultural')" class="filter-btn"><i class="fa-solid fa-masks-theater"></i></button>
+          <p>cultural</p>
         </div>
         <div class="filter">
-          <button onclick="loadCategory('mountains')" class="filter-btn"><i class="fa-solid fa-mountain-sun"></i></button>
-          <p>Mountains</p>
+          <button onclick="loadCategory('ecotourism')" class="filter-btn"><i class="fa-solid fa-feather"></i></button>
+          <p>Ecotourism</p>
         </div>
         <div class="filter">
-          <button onclick="loadCategory('castles')" class="filter-btn"><i class="fa-solid fa-chess-rook"></i></button>
-          <p>Castles</p>
+          <button onclick="loadCategory('hill stations')" class="filter-btn"><i class="fa-solid fa-person-hiking"></i></button>
+          <p>Hill Stations</p>
         </div>
         <div class="filter">
-          <button onclick="loadCategory('amazing pools')" class="filter-btn"><i class="fa-solid fa-person-swimming"></i></button>
-          <p>Amazing Pools</p>
+          <button onclick="loadCategory('historical')" class="filter-btn"><i class="fa-solid fa-landmark-dome"></i></button>
+          <p>Historical</p>
         </div>
         <div class="filter">
-          <button onclick="loadCategory('tents')" class="filter-btn"><i class="fa-solid fa-tents"></i></button>
-          <p>Tents</p>
+          <button onclick="loadCategory('luxury')" class="filter-btn"><i class="fa-solid fa-gem"></i></button>
+          <p>Luxury</p>
         </div>
         <div class="filter">
-          <button onclick="loadCategory('farms')" class="filter-btn"><i class="fa-solid fa-tractor"></i></button>
-          <p>Farms</p>
+          <button onclick="loadCategory('natural wonders')" class="filter-btn"><i class="fa-solid fa-binoculars"></i></button>
+          <p>Natural</p>
         </div>
         <div class="filter">
-          <button onclick="loadCategory('arctic')" class="filter-btn"><i class="fa-solid fa-igloo"></i></button>
-          <p>Arctic</p>
+          <button onclick="loadCategory('spiritual')" class="filter-btn"><i class="fa-solid fa-dove"></i></button>
+          <p>Spiritual</p>
+        </div>
+         <div class="filter">
+          <button onclick="loadCategory('wildlife')" class="filter-btn"><i class="fa-brands fa-suse"></i></button>
+          <p>Wildlife</p>
         </div>
       </div>
     </div>
@@ -228,7 +232,7 @@
         
           <p class="card-text"
           ><b><%=listing.title %></b> <br>
-          &#x20B9;<%=listing.price.toLocaleString("en-IN") %> / Night 
+          &#x20B9;<%=listing.price.toLocaleString("en-IN") %> / Average Expense 
           <i class="tax-info">+ 18%GST</i>
           </p>
         </div>

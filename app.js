@@ -36,7 +36,13 @@ main()
     console.log(err);
 })
 async function main() {
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(dbUrl,await mongoose.connect(process.env.ATLASDB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  tls: true,
+  tlsAllowInvalidCertificates: true
+ } ))
+
 }
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname,"views"))
@@ -287,16 +293,19 @@ app.get("/listings/pricefilter", (req, res) => {
 })
 
 app.get("/listings/category/:categoryName", async (req, res) => {
-  let currentUser = null;
-  if (req.session.user_id) {
-    currentUser = await User.findById(req.session.user_id);
-  }
+  
+  // if (req.session.user_id) {
+  //   currentUser = await User.findById(req.session.user_id);
+  // }
 
   const { categoryName } = req.params;
+   req.flash("success", `You are viewing: ${categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}`);
   const allListings = await Listing.find({ category: categoryName });
 
-  res.render("listings/index.ejs", { allListings, currentUser });
+  res.render("listings/index.ejs", { allListings });
+  
 });
+
 
 
 app.get("/wishlist", async (req, res) => {

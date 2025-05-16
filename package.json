@@ -1,6 +1,6 @@
 {
   "engine": {
-    "node":"22.14.0"
+    "node":"18.20.8"
   },
   "name": "major-project",
   "version": "1.0.0",
