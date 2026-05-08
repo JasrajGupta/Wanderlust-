@@ -119,6 +119,9 @@ app.use((req, res, next) => {
 //     console.log("sample was saved");
 //     res.send("successful")
 //  })
+app.get("/health", (req, res) => {
+    res.send("Server is running");
+});
 
 app.get("/listings",wrapAsync(async (req, res) => {
    const allListings = await Listing.find({})
